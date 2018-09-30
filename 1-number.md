@@ -267,7 +267,7 @@ function starPattern(x) {
   for (let i = 1; i < x + 1; i++) {
     console.log(' '.repeat(x - i) + '* '.repeat(i))
   }
-  for (let i = 1; i < x + 1; i++) {
+  for (let i = 1; i < x ; i++) {
     console.log(' '.repeat(i) + '* '.repeat(x - i))
   }
 }
