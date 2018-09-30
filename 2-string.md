@@ -9,6 +9,20 @@ insensitiveEqual('hello', 'Hello'); -> true
 insensitiveEqual('hello', 'world'); -> false
 ```
 
+풀이:
+```js
+function insensitiveEqual(x, y) {
+  return x.toLowerCase() === y.toLowerCase ()
+  
+  // 위의 코드로 단순화 됨
+  // if (x.toLowerCase() === y.toLowerCase()) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+}
+```
+
 ### 문제 2
 
 문자열 `s`와 자연수 `n`을 입력받아, 만약 `s`의 길이가 `n`보다 작으면 `s`의 왼쪽에 공백으로 추가해서 길이가 `n`이 되게 만든 후 반환하고, 아니면 `s`를 그대로 반환하는 함수를 작성해보세요.
@@ -19,9 +33,36 @@ leftPad('hello', 8); -> '   hello'
 leftPad('hello', 3); -> 'hello'
 ```
 
+풀이:
+```js
+function leftPad(s, n) {
+  if (s.length < n) {
+    const spaceNum = n - s.length
+    return ' '.repeat(spaceNum) + s
+  } else {
+    return s
+  }
+}
+```
+
 ### 문제 3
 
 문자열을 입력받아, 문자열 안에 들어있는 모든 모음(a, e, i, o, u)의 갯수를 반환하는 함수를 작성하세요.
+
+풀이:
+```js
+function count(str) {
+  let num = 0
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') {
+      num += 1
+    } 
+  }
+  return num
+}
+
+count('hello')
+```
 
 ### 문제 4
 
