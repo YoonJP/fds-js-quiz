@@ -173,7 +173,7 @@ function primeNumber(x) {
   return `${x}: 소수`
 } 
 
-primeNumber()
+primeNumber(7)
 ```
 
 ### 문제 8
@@ -226,6 +226,8 @@ function starStack(x) {
     console.log('* '.repeat(i))
   }
 }
+
+starStack(7)
 ```
 
 ### 문제 10
@@ -269,6 +271,8 @@ function starPattern(x) {
     console.log(' '.repeat(i) + '* '.repeat(x - i))
   }
 }
+
+starPattern(7)
 ```
 
 
