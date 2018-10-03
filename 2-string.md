@@ -407,8 +407,7 @@ split('let,const,var', ',') -> ['let', 'const', 'var']
 ```js
 function split(str, x) {
   if (x == null) {
-    let arrStrToArr = [str]
-    return arrStrToArr
+    return [str]
   } else {
     let arrStrSplit = str.split(x)
     return arrStrSplit
