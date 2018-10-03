@@ -406,7 +406,7 @@ split('let,const,var', ',') -> ['let', 'const', 'var']
 풀이:
 ```js
 function split(str, x) {
-  if (str === 0 && x == null) {
+  if (x == null) {
     let arrStrToArr = [str]
     return arrStrToArr
   } else {
