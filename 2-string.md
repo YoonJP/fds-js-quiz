@@ -346,7 +346,7 @@ camelCaseToSnakeCase ('helloWorldJavaScript') // 'hello_world_java_script' 반�
 
 Snake case의 문자열을 입력받아, camel case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 
-### 문제 15 (assignment)
+### 문제 15
 
 `String.prototype.split`과 똑같이 동작하는 함수를 작성하세요.
 
