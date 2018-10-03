@@ -315,10 +315,13 @@ longestWord('ccc A bb CCC BB') // [ 'ccc', 'CCC' ] 반환
 풀이:
 ```js
 function firstLetters(s, n) {
-  return s[0].repeat(n)
+  let arrS = [...s]
+  arrS.splice(n, arrS.length - n)
+  return arrS.join('')
 }
 
-firstLetters('JavaScript', 7) // 'JJJJJJJ' 반환
+firstLetters('Hello World JavaScript', 5) // 'Hello' 반환
+firstLetters('Hello World JavaScript', 11) // 'Hello World' 반환
 ```
 
 ### 문제 13
