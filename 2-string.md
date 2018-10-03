@@ -268,9 +268,42 @@ const firstLetterCapital = (input) => {
 firstLetterCapital('i am hungry')
 ```
 
-풀이 (2):
+강사님 풀이 (1):
 ```js
+// 배열을 사용하지 않고, 루프를 사용해서 풀기
+function capitalize(input) {
+  let seenBlank = true
+  let memory = ''
 
+  for (let i = 0; i < input.length; i++) {
+    if (seenBlank) {
+      memory += input[i].toUpperCase()
+    } else {
+      memory += input[i]
+    }
+
+    if (input[i] === ' ') {
+      seenBlank = true
+    } else {
+      seenBlank = false
+    }
+  }
+
+  return memory
+}
+
+capitalize('i am hungry')
+
+```
+
+강사님 풀이 (2):
+```js
+// 배열 메소드를 사용해서 풀기
+const capitalize = input => input.split(' ')
+  .map(word => word.slice(0, 1).toUpperCase() + word.slice(1))
+  .join(' ')
+
+capitalize('i am hungry')
 ```
 
 
