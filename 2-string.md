@@ -345,7 +345,17 @@ longestWord('ccc A bb CCC BB') // [ 'ccc', 'CCC' ] 반환
 
 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
 
-풀이:
+풀이 (1: slice) :
+```js
+function firstLetters(s, n) {
+  return s.slice(0, n)
+}
+
+firstLetters('Hello World JavaScript', 5) // 'Hello' 반환
+firstLetters('Hello World JavaScript', 11) // 'Hello World' 반환
+```
+
+풀이 (2: splice):
 ```js
 function firstLetters(s, n) {
   let arrS = [...s]
