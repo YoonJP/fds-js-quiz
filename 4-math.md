@@ -4,10 +4,10 @@
 
 ```js
 function circleArea(num) {
-  return num ** 2 * 3.14
+  return num ** 2 * Math.PI
 }
 
-circleArea(5) // 78.5 반환
+circleArea(5) // 78.53981633974483 반환
 ```
 
 ### 문제 2
