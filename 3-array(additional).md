@@ -55,7 +55,7 @@ function max(arr) {
   return arr.reduce((acc, item) => acc > item ? acc : item, -Infinity) // 음수중 가장 작은 수 '-Infinity', 초기 누적값(acc)를 생략하면 의도치 않은 결과가 나올 수 있으므로 주의!!
 }
 
-max([-3, -1, -4, -5, -2]) // 5 반환
+max([-3, -1, -4, -5, -2]) // -1 반환
 ```
 
 ※ Math.max()메소드를 쓰면 입력받은 배열의 요소중 최대값을 바로 구할 수 있다. 
@@ -75,7 +75,7 @@ function max(arr) {
   return arr.reduce((acc, item) => acc > item ? acc : item, -Infinity)
 }
 
-max([-3, -1, -4, -5, -2]) // 5 반환
+max([-3, -1, -4, -5, -2]) // -1 반환
 ```
 
 ---
