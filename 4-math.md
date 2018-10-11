@@ -59,14 +59,23 @@ ceilBy5(37); // 40 반환
 
 배열을 입력받아, 요소들의 순서를 뒤섞은 새 배열을 반환하는 함수를 작성하세요.
 
+풀이 (1):
 ```js
 function shuffle(arr) {
-  let arr2 = arr.slice()
-  arr2.sort((x, y) => Math.floor(Math.random() * arr2.length))
-  return arr2
-}
+  let  newArr = [];
+  for (let i = 0; i < arr.length; i++) {    
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+    newArr[i] = newArr[randomIndex];
+    newArr[randomIndex] = arr[i];
+  }
+  return newArr;
+}  
 
 shuffle([1, 2, 3, 4, 5]) // [3, 1, 4, 5, 2] 와 같이 순서가 뒤섞인 새 배열 반환
+```
+강사님 풀이:
+```js
+
 ```
 
 ### 문제 5
@@ -86,6 +95,21 @@ function colorGenerator() {
 colorGenerator() // '#EAB164'와 같은 임의의 HTML 색상 코드를 반환 
 ```
 
+### 문제 5 - 1
+임의의 rgb(0~255, 0~255, 0~255) 색상 코드를 반환하는 함수를 작성하세요.
+
+```js
+function colorGenerator() {
+  const r = Math.floor(Math.random() * 256)
+  const g = Math.floor(Math.random() * 256)
+  const b = Math.floor(Math.random() * 256)
+  
+  return `rgb(${r}, ${g}, ${b})`
+}
+
+colorGenerator() // 'rgb(36, 31, 39)'와 같은 임의의 HTML 색상 코드를 반환 
+```
+
 ### 문제 6
 
 양수를 입력받아, 그 수만큼의 길이를 갖는 임의의 문자열을 반환하는 함수를 작성하세요.
@@ -95,13 +119,26 @@ function randomString(num) {
   let numLength = (num).toString().length
   let charSet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let result = ''
-  for (let i = 0; i < numLength; i++) {
+  for (let i = 0; i < num; i++) {
     result += charSet[Math.floor(Math.random() * charSet.length)]
   }
   return result
 }
 
-randomString(12345) // 'SpgHS'와 같은 임의의 문자열을 반환
+randomString(5) // 'SpgHS'와 같은 임의의 문자열을 반환
+```
+
+풀이 (2: Unicode Code point):
+```js
+function randomString(n) {
+  let result = ''
+  for (let i = 0; i < n; i++) {
+    result += String.fromCodePoint(Math.floor(Math.random() * 65536))
+  }
+  return result
+}
+
+randomString(5) // '暈搫얅샢'와 같은 랜덤 글자 반환
 ```
 
 ### 문제 7
